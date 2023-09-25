@@ -1,0 +1,23 @@
+{
+  "name": "module-a",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "postcss-loader": "^7.3.3",
+    "style-loader": "^3.3.3",
+    "vue-loader": "^17.2.2",
+    "vue-style-loader": "^4.1.3"
+  },
+  "dependencies": {
+    "element-plus": "^2.3.14",
+    "vue": "3.3.4"
+  }
+}

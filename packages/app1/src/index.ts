@@ -1,0 +1,1 @@
+import('./main.ts'); // 因为现在 vue、react 和 react-dom 被 shared 出来，变成异步加载的模块了。所以这里要使用异步方式引入入口文件

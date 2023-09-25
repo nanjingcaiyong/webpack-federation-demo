@@ -1,0 +1,24 @@
+{
+  "name": "module-a",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "react-dom": "^18.2.0",
+    "source-map-loader": "^4.0.1"
+  }
+}

@@ -1,0 +1,3 @@
+packages:
+  # 基座
+  - 'packages/*'
