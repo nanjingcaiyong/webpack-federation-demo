@@ -1,6 +1,71 @@
-## 微前端
+# 微前端(MFE)演示项目
 
-## webpack5 联邦模块
+
+## 项目结构
+
+```txt
+├── package.json
+├── packages
+│   ├── app-base                                  基座项目
+│   │   ├── ExternalTemplateRemotesPlugin.ts      webpack插件（使remotes可以动态配置链接，通过window动态设置域名和版本号）
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── index.html
+│   │   │   ├── index.ts
+│   │   │   ├── index.vue
+│   │   │   └── main.ts
+│   │   ├── tsconfig.json
+│   │   ├── typings
+│   │   │   ├── global.d.ts
+│   │   │   └── module.d.ts
+│   │   └── webpack.config.ts
+│   ├── app1                                      子项目1（vue项目）
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── index.html
+│   │   │   ├── index.ts
+│   │   │   ├── main.ts
+│   │   │   └── project1.vue
+│   │   ├── tsconfig.json
+│   │   ├── typings
+│   │   │   └── global.d.ts
+│   │   └── webpack.config.ts
+│   ├── app2                                      子项目2（vue项目，使用基座项目导出的element-plus）
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── index.html
+│   │   │   ├── index.ts
+│   │   │   ├── main.ts
+│   │   │   └── project2.vue
+│   │   ├── tsconfig.json
+│   │   ├── typings
+│   │   │   └── global.d.ts
+│   │   └── webpack.config.ts
+│   ├── app4                                      子项目4（react项目）
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── index.html
+│   │   │   ├── index.tsx
+│   │   │   ├── main.tsx
+│   │   │   └── project4.tsx
+│   │   ├── tsconfig.json
+│   │   └── webpack.config.ts
+│   └── project3                                  子项目3（vue项目，导出多个组件）
+│       ├── package.json
+│       ├── src
+│       │   ├── components
+│       │   │   └── moduleA.vue
+│       │   ├── index.html
+│       │   ├── index.ts
+│       │   ├── main.ts
+│       │   └── project3.vue
+│       ├── tsconfig.json
+│       ├── typings
+│       │   └── global.d.ts
+│       └── webpack.config.ts
+├── pnpm-lock.yaml
+└── pnpm-workspace.yaml
+```
 
 ## 项目配置
 
@@ -15,9 +80,6 @@
 - `shared`: 需要与宿主项目共享的依赖包。如果指定依赖包，那么宿主项目和寄生项目生产环境加载同一个资源
 
 ### 创建项目
-
-
-
 
 
 ### 寄生的子项目

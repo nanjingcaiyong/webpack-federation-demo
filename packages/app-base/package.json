@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack serve"
+    "dev": "npx cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack serve",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

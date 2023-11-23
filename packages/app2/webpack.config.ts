@@ -34,6 +34,17 @@ export default {
       name: 'app2',
       exposes: {
         './app': './src/project2.vue'
+      },
+      remotes: {
+        'base': 'base@http://localhost:8080/remoteEntry.js'
+      },
+      shared: {
+        vue: {
+          singleton: true,
+        },
+        "element-plus": {
+          singleton: true, // 使用单例模式
+        }
       }
     })
   ]

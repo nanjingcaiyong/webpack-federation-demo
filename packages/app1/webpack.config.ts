@@ -47,6 +47,9 @@ export default {
       shared: {
         vue: {
           singleton: true,
+        },
+        "element-plus": {
+          singleton: true, // 使用单例模式 
         }
       }
     })

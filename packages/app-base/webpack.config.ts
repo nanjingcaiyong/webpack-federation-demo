@@ -47,15 +47,22 @@ export default {
     new webpack.container.ModuleFederationPlugin({
       name: 'base',
       filename: 'remoteEntry.js',
+      exposes: {
+        "./ElementPlus": "element-plus", // 暴露 Element Plus
+      },
       remotes: {
-        app1: `app1@[window.CDN.APP1_APP_CDN]/remoteEntry.js`,
-        app2: 'app2@[window.CDN.APP2_APP_CDN]/app2.js',
-        item_three: 'item_three@[window.CDN.APP3_APP_CDN]/item_three.js',
-        app4: 'app4@http://localhost:8084/remoteEntry.js'
+        app1: `app1@[window.CDN.APP1_APP_CDN]/remoteEntry.js?v=[window.VERSION.P1]`,
+        app2: 'app2@[window.CDN.APP2_APP_CDN]/app2.js?v=[window.VERSION.P2]',
+        item_three: 'item_three@[window.CDN.APP3_APP_CDN]/item_three.js?v=[window.VERSION.P3]',
+        app4: 'app4@[window.CDN.APP4_APP_CDN]/remoteEntry.js?v=[window.VERSION.P4]'
       },
       shared: {
         vue: {
           singleton: true,
+        },
+        "element-plus": {
+          singleton: true, // 使用单例模式
+
         }
       }
     }),
