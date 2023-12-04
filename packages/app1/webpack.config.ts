@@ -40,7 +40,6 @@ export default {
     new VueLoaderPlugin(),
     new webpack.container.ModuleFederationPlugin({
       name: 'app1',
-      filename: 'remoteEntry.js',
       exposes: {
         './AppContainer': './src/project1.vue'
       },
